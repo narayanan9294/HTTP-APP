@@ -1,0 +1,44 @@
+<nav class="navbar navbar-inverse" style="position: fixed; z-index:100;
+left: 0;
+top: 0;
+width: 100%;
+background-color: rgb(0, 0, 0);
+color: white;
+text-align: center;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand"> <img style="width: 130px; height:auto" src="assets/images/http.png" alt=""></a>
+            <h1 style="color: rgb(245, 245, 245); padding: 10px;"></h1>
+        </div>
+
+        <div *ngIf="httpSer.isLoggedIn()">
+
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <li class="active" style="color: white; padding: 10px;"><a href="index.html">Try to Login</a></li> -->
+                <li style="color: rgb(36, 100, 160); padding: 25px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-weight: 700;"> Welcome {{this.httpSer.loginUserName()}} </li>
+                <li style="color: white; padding: 10px;"><a routerLink="/weather">Weather</a></li>
+                <li style="color: white; padding: 10px;"><a routerLink="/news">News</a></li>
+                <li style="color: white; padding: 10px;"><a routerLink="/movies">Movies</a></li>
+                <li style="color: white; padding: 10px;"><a routerLink="/jokes">Jokes</a></li>
+                <li style="color: white; padding: 10px;"><a routerLink="/" (click)="doLogOut()">Logout</a></li>
+            </ul>
+
+        </div>
+
+
+        <div *ngIf="!httpSer.isLoggedIn()">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active" style="color: white; padding: 10px;"><a href="index.html">Try to Login</a></li>
+                <!-- <li style="color: white; padding: 10px;"><a routerLink="/weather">Weather</a></li>
+                <li style="color: white; padding: 10px;"><a routerLink="/news">News</a></li>
+                <li style="color: white; padding: 10px;"><a routerLink="/movies">Movies</a></li>
+                <li style="color: white; padding: 10px;"><a routerLink="/jokes">Jokes</a></li>
+                <li style="color: white; padding: 10px;"><a routerLink="">Logout</a></li> -->
+            </ul>
+
+        </div>
+
+
+    </div>
+</nav>

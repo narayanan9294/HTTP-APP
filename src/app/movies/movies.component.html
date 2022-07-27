@@ -1,0 +1,14 @@
+<div id="movieInfo" style="padding-left: 180px; padding-top: 30px;">
+    MovieName <input type="text" name="" id="inputData" #uName (blur)="getMovieInfo(uName.value)">
+    <div *ngIf="moviePoster && isLoader">
+        <h1>Movie info</h1>
+        <span style="font-weight: bold;"> Movie Title:{{title}}</span> <span id="movieTitle"></span> <br>
+        <span style="font-weight: bold;"> Director: {{director}}</span> <span id="director"></span> <br>
+        <span style="font-weight: bold;"> Release Year: {{releasedYear}} </span> <span id="released"></span> <br>
+        <span style="font-weight: bold;"> RunTime:{{runTime}} </span> <span id="runTime"></span> <br>
+        <img src="{{moviePoster}}" alt="" id="mImg">
+    </div>
+    <div *ngIf="!isLoader && moviePoster">
+        <img src="assets/images/loading.gif">
+    </div>
+</div>
